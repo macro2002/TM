@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMInstaller", "TMInstaller\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMProcess", "TMProcess\TMProcess.csproj", "{B7556D59-E547-4A1F-AF74-FA08D3F89AD6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMUpdater", "TMUpdater\TMUpdater.csproj", "{5DC50D77-4EAD-41EB-8C22-8D359588348F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B7556D59-E547-4A1F-AF74-FA08D3F89AD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7556D59-E547-4A1F-AF74-FA08D3F89AD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7556D59-E547-4A1F-AF74-FA08D3F89AD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DC50D77-4EAD-41EB-8C22-8D359588348F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DC50D77-4EAD-41EB-8C22-8D359588348F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DC50D77-4EAD-41EB-8C22-8D359588348F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DC50D77-4EAD-41EB-8C22-8D359588348F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

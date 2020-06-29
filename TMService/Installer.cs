@@ -14,8 +14,8 @@ namespace TMService
 
             serviceInstaller = new ServiceInstaller();
             processInstaller = new ServiceProcessInstaller();
-            processInstaller.Account = ServiceAccount.LocalSystem;
-            serviceInstaller.StartType = ServiceStartMode.Manual;
+            processInstaller.Account = ServiceAccount.LocalService;
+            serviceInstaller.StartType = ServiceStartMode.Automatic;
             serviceInstaller.ServiceName = "TMService";
             Installers.Add(processInstaller);
             Installers.Add(serviceInstaller);

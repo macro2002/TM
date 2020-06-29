@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-using System.ServiceProcess;
-using System.Threading;
+﻿using System.ServiceProcess;
 using TMProcess;
 
 namespace TMService

@@ -14,41 +14,44 @@ namespace TMProcess
         public void Start()
         {
             Task.Factory.StartNew(() => {
-                while (true)
+                while (!isStop)
                 {
-                    using (StreamReader sr = new StreamReader($@"{AppDomain.CurrentDomain.BaseDirectory}\cron.tab", Encoding.Default))
+                    var path = $@"{AppDomain.CurrentDomain.BaseDirectory}\cron.tab";
+                    if (File.Exists(path))
                     {
-                        Test("reader");
-                        string line;
-                        while ((line = sr.ReadLine()) != null)
+                        using (StreamReader sr = new StreamReader(path, Encoding.Default))
                         {
-                            //Splitting the string into the path and launch parameters
-                            string[] words = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                            string commands = "";
-
-                            for (int i = 1; i < words.Count(); i++)
+                            string line;
+                            while ((line = sr.ReadLine()) != null)
                             {
-                                commands = $"{commands} {words[i]}";
-                            }
+                                //Splitting the string into the path and launch parameters
+                                string[] words = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                                string commands = "";
 
-                            try
-                            {
-                                ProcessStartInfo pro = new ProcessStartInfo();
-                                pro.FileName = words[0];
-                                pro.Arguments = commands;
-                                Process.Start(pro);
+                                for (int i = 1; i < words.Count(); i++)
+                                {
+                                    commands = $"{commands} {words[i]}";
+                                }
 
-                                //Process x = Process.Start(pro);
-                                //x.WaitForExit();
+                                try
+                                {
+                                    using (var process = new Process())
+                                    {
+                                        process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                                        process.StartInfo.UseShellExecute = false;
+                                        process.StartInfo.RedirectStandardOutput = true;
+                                        process.StartInfo.FileName = words[0];
+                                        process.StartInfo.Arguments = commands;
+                                        process.Start();
+                                    }
+                                }
+                                catch
+                                {
+                                    //Here you can add error logging
+                                }
                             }
-                            catch
-                            {
-                                Test("error open");
-                                //Here you can add error logging
-                            }
-
                         }
-                    }
+                    }   
                     //Five minutes
                     Thread.Sleep(300000);
                 }
@@ -58,15 +61,6 @@ namespace TMProcess
         public void Stop()
         {
             isStop = true;
-        }
-
-        private void Test(string action)
-        {
-            using (FileStream fstream = new FileStream($@"D:\TM\TMService\test.txt", FileMode.OpenOrCreate))
-            {
-                byte[] array = Encoding.Default.GetBytes($"{DateTime.Now}-{action}");
-                fstream.Write(array, 0, array.Length);
-            }
         }
     }
 }
