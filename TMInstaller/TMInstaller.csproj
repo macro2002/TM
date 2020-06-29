@@ -124,5 +124,8 @@
   <ItemGroup>
     <None Include="Resources\TMProcess.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TMUpdater.exe" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

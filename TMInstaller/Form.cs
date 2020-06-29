@@ -39,6 +39,7 @@ namespace TMInstaller
                 {
                     TMServiceIntall();
                 }
+                File.WriteAllBytes($@"{txtPath.Text}\TM\TMUpdater.exe", Resources.TMUpdater);
                 Close();
             }
         }
