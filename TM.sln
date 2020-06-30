@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMProcess", "TMProcess\TMPr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMUpdater", "TMUpdater\TMUpdater.csproj", "{5DC50D77-4EAD-41EB-8C22-8D359588348F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uninstall", "Uninstall\Uninstall.csproj", "{64488EEB-0157-4206-B572-B317A2266A73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{5DC50D77-4EAD-41EB-8C22-8D359588348F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DC50D77-4EAD-41EB-8C22-8D359588348F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DC50D77-4EAD-41EB-8C22-8D359588348F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64488EEB-0157-4206-B572-B317A2266A73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64488EEB-0157-4206-B572-B317A2266A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64488EEB-0157-4206-B572-B317A2266A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64488EEB-0157-4206-B572-B317A2266A73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

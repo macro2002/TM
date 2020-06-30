@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.ServiceProcess;
 using System.Text;
 using System.Windows.Forms;
 using TMInstaller.Properties;
@@ -40,6 +41,7 @@ namespace TMInstaller
                     TMServiceIntall();
                 }
                 File.WriteAllBytes($@"{txtPath.Text}\TM\TMUpdater.exe", Resources.TMUpdater);
+                File.WriteAllBytes($@"{txtPath.Text}\TM\Unistall.exe", Resources.Uninstall);
                 Close();
             }
         }

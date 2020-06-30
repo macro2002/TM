@@ -65,6 +65,7 @@ namespace TMAgent
 
         private static void Install()
         {
+           
             var fileName = "";
             if (File.Exists(fileName))
             {
@@ -78,6 +79,8 @@ namespace TMAgent
 
         private static void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
+            //This function is currently disabled
+            return;
             using (var process = new Process())
             {
                 process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;

@@ -110,5 +110,15 @@ namespace TMInstaller.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] Uninstall {
+            get {
+                object obj = ResourceManager.GetObject("Uninstall", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
