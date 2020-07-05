@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Security.Principal;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TMInstaller
@@ -19,7 +17,7 @@ namespace TMInstaller
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             bool createdNew;
             _syncObject = new Mutex(true, _syncObjectName, out createdNew);
@@ -45,9 +43,15 @@ namespace TMInstaller
             }
             else 
             {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Form());
+                if(args.Length == 0)
+                {
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    Application.Run(new Form());
+                } else
+                {
+                    Function.SilentIntall(args);
+                }
             }
         }
     }

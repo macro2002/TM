@@ -61,17 +61,6 @@ namespace TMInstaller.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на D:/Project/Consta/Consta/bin/Debug/Consta.exe param1 param2
-        ///D:/Project/Consta/Consta/bin/Debug/Consta.exe param3 param4
-        ///D:/Project/Consta/Consta/bin/Debug/Consta.exe param5 param6.
-        /// </summary>
-        internal static string cron {
-            get {
-                return ResourceManager.GetString("cron", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
         internal static byte[] TMAgent {

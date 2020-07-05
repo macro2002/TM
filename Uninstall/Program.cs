@@ -28,44 +28,10 @@ namespace Uninstall
             RegistryKey registry = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
             registry.DeleteValue("TMAgent", false);
 
-            using (var serviceController = new ServiceController("TMService"))
-            {
-                if (serviceController.Status == ServiceControllerStatus.Running)
-                {
-                    serviceController.Stop();
-                    serviceController.WaitForStatus(ServiceControllerStatus.Stopped);
-                }
-            }
+            Process.Start($@"{path}\TMService\TMService.exe", "-uninstall");
 
-            try
-            {
-                var utilPath = "";
-                FileInfo w64 = new FileInfo(@"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe");
-                if (w64.Exists)
-                {
-                    utilPath = @"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe";
-
-                }
-                else
-                {
-                    FileInfo w32 = new FileInfo(@"C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe");
-                    if (w32.Exists)
-                    {
-                        utilPath = @"C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe";
-                    }
-                    else
-                    {
-                        return;
-                    }
-                }
-                Process.Start(utilPath, $@"/u {path}\TMService\TMService.exe");
-            }
-            catch
-            {
-                Console.WriteLine("Error: The service cannot be registered");
-                Console.ReadKey();
-            }
-
+            //There is an error here
+            return;
             DirectoryInfo dirInfo = new DirectoryInfo($@"{path}\TMAgent");
             if (dirInfo.Exists)
             {

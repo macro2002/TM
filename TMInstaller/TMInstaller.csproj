@@ -78,6 +78,7 @@
     <Compile Include="Form.Designer.cs">
       <DependentUpon>Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Function.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form.resx">
@@ -103,7 +104,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\cron.tab" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -132,6 +132,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\TMInstaller.exe" />
+    <Content Include="TMProcess.dll" />
+    <Content Include="TMService.exe" />
+    <Content Include="Uninstall.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>
