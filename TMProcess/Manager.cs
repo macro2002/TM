@@ -25,7 +25,7 @@ namespace TMProcess
                             while ((line = sr.ReadLine()) != null)
                             {
                                 //Splitting the string into the path and launch parameters
-                                string[] words = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                                string[] words = line.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
                                 string commands = "";
 
                                 for (int i = 1; i < words.Count(); i++)

@@ -31,6 +31,13 @@ namespace TMInstaller
                 ProcessStartInfo processInfo = new ProcessStartInfo();
                 processInfo.Verb = "runas";
                 processInfo.FileName = Application.ExecutablePath;
+
+                var arguments = "";
+                for (int i = 0; i < args.Count(); i++)
+                {
+                    arguments = $"{arguments} {args[i]}";
+                }
+                processInfo.Arguments = arguments;
                 try
                 {
                     Process.Start(processInfo); 
